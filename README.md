@@ -1,98 +1,98 @@
-**🧾 Smart Reconciliation & Audit System**
+# 🧾 Smart Reconciliation & Audit System
 
-A scalable, enterprise-grade MERN-based backend system built for high-volume financial data reconciliation with:
+A scalable, enterprise-grade **MERN-based backend system** built for high-volume financial data reconciliation with:
 
-✅ Immutable audit logging
+* ✅ Immutable audit logging
+* ✅ Idempotent file uploads
+* ✅ High-performance MongoDB indexing
+* ✅ Batch processing architecture
+* ✅ Role-based access control
 
-✅ Idempotent file uploads
+> Designed as a **non-CRUD architecture**, prioritizing data integrity, traceability, and reconciliation accuracy over simple database operations.
 
-✅ High-performance MongoDB indexing
+---
 
-✅ Batch processing architecture
+## 🚀 Key Features
 
-✅ Role-based access control
+### 📂 Bulk File Upload Processing
 
-Designed as a non-CRUD architecture, prioritizing data integrity, traceability, and reconciliation accuracy over simple database operations.
+* Supports files with up to **50,000+ records**
+* Idempotent uploads using **file hashing**
+* Duplicate file detection & prevention
+* Structured upload lifecycle tracking
 
-🚀 Key Features
-📂 Bulk File Upload Processing
+---
 
-Supports files with up to 50,000+ records
-
-Idempotent uploads using file hashing
-
-Duplicate file detection & prevention
-
-Structured upload lifecycle tracking
-
-🔄 Smart Reconciliation Engine
+### 🔄 Smart Reconciliation Engine
 
 Automatically detects:
 
-✔️ Matched records
-
-⚠️ Partially matched records
-
-❌ Unmatched records
-
-🔁 Duplicate transactions
+* ✔️ Matched records
+* ⚠️ Partially matched records
+* ❌ Unmatched records
+* 🔁 Duplicate transactions
 
 Built for scalable financial comparisons such as:
 
-Bank vs Internal Ledger
+* Bank vs Internal Ledger
+* Payment Gateway vs ERP
+* Settlement vs Transaction Logs
 
-Payment Gateway vs ERP
+---
 
-Settlement vs Transaction Logs
+### 🧾 Immutable Audit Logging
 
-🧾 Immutable Audit Logging
+* Every system event is recorded
+* Audit entries **cannot be modified or deleted**
+* Tracks:
 
-Every system event is recorded
+  * Uploads
+  * Reconciliation runs
+  * User actions
+  * System changes
+* Ensures compliance & forensic traceability
 
-Audit entries cannot be modified or deleted
+---
 
-Tracks:
+### 👥 Role-Based Access Control
 
-Uploads
+| Role        | Permissions             |
+| ----------- | ----------------------- |
+| **Admin**   | Full system control     |
+| **Analyst** | Upload & reconcile data |
+| **Viewer**  | Read-only access        |
 
-Reconciliation runs
+Secure authentication via **JWT**.
 
-User actions
+---
 
-System changes
+### ⚡ High-Performance MongoDB Architecture
 
-Ensures compliance & forensic traceability
+* Optimized compound indexes
+* Indexed reconciliation fields
+* Scalable schema design
+* Efficient lookups for large datasets
+* Designed for financial-grade workloads
 
-👥 Role-Based Access Control
-Role	Permissions
-Admin	Full system control
-Analyst	Upload & reconcile data
-Viewer	Read-only access
+---
 
-Secure authentication via JWT.
+# 🏗️ Tech Stack
 
-⚡ High-Performance MongoDB Architecture
+| Layer                  | Technology         |
+| ---------------------- | ------------------ |
+| **Backend**            | Node.js, Express   |
+| **Database**           | MongoDB + Mongoose |
+| **Queue (Ready)**      | BullMQ             |
+| **Security**           | Helmet, JWT        |
+| **Logging**            | Morgan             |
+| **File Parsing**       | CSV / XLSX         |
+| **Environment Config** | dotenv             |
 
-Optimized compound indexes
+---
 
-Indexed reconciliation fields
+# 📁 Project Structure
 
-Scalable schema design
-
-Efficient lookups for large datasets
-
-Designed for financial-grade workloads
-
-🏗️ Tech Stack
-Layer	Technology
-Backend	Node.js, Express
-Database	MongoDB + Mongoose
-Queue (Ready)	BullMQ
-Security	Helmet, JWT
-Logging	Morgan
-File Parsing	CSV / XLSX
-Environment Config	dotenv
-📁 Project Structure
+```
 smart-reconciliation/
 ├── client/                  # React frontend (optional)
 ├── server/
@@ -110,142 +110,165 @@ smart-reconciliation/
 │   │   └── server.js
 │   ├── package.json
 │   └── .env.example
+```
 
-🧠 Core Modules
-👤 User Module
+---
 
-Role-based access
+# 🧠 Core Modules
 
-Secure authentication
+### 👤 User Module
 
-JWT-based authorization
+* Role-based access
+* Secure authentication
+* JWT-based authorization
 
-📦 Upload Module
+---
 
-Tracks file uploads
+### 📦 Upload Module
 
-Hash-based duplicate prevention
+* Tracks file uploads
+* Hash-based duplicate prevention
+* Upload status lifecycle management
 
-Upload status lifecycle management
+---
 
-🧾 Record Module
+### 🧾 Record Module
 
-Stores raw transaction data
+* Stores raw transaction data
+* Indexed for fast reconciliation
+* Supports high-volume batch operations
 
-Indexed for fast reconciliation
+---
 
-Supports high-volume batch operations
+### 🔄 Reconciliation Module
 
-🔄 Reconciliation Module
+* Links source & system records
+* Stores reconciliation status
+* Flags mismatches & discrepancies
+* Supports rule-based comparison logic
 
-Links source & system records
+---
 
-Stores reconciliation status
+### 🧱 Audit Module
 
-Flags mismatches & discrepancies
+* Immutable audit schema
+* Logs system & data mutations
+* Ensures compliance & accountability
 
-Supports rule-based comparison logic
+---
 
-🧱 Audit Module
+# 🔌 API
 
-Immutable audit schema
+## Health Check
 
-Logs system & data mutations
+### `GET /health`
 
-Ensures compliance & accountability
+**Response**
 
-🔌 API
-Health Check
-GET /health
-
-Response
-
+```json
 {
   "status": "ok",
   "timestamp": "2024-02-15T10:15:00.000Z"
 }
+```
 
-⚙️ Setup Instructions
-1️⃣ Clone Repository
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Clone Repository
+
+```bash
 git clone <your-repo-url>
 cd smart-reconciliation/server
+```
 
-2️⃣ Install Dependencies
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 npm install
+```
 
-3️⃣ Configure Environment Variables
+---
 
-Create a .env file:
+## 3️⃣ Configure Environment Variables
 
+Create a `.env` file:
+
+```
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/smart-reconciliation
 JWT_SECRET=your_secret_key
+```
 
-4️⃣ Run Development Server
+---
+
+## 4️⃣ Run Development Server
+
+```bash
 npm run dev
+```
 
-✅ Expected Output
+---
+
+### ✅ Expected Output
+
+```
 ✅ Connected to MongoDB
 🚀 Server running on port 5000
+```
 
-🛡️ Design Principles
+---
 
-Idempotency First
+# 🛡️ Design Principles
 
-Audit Before Mutation
+* **Idempotency First**
+* **Audit Before Mutation**
+* **Schema-Driven Validation**
+* **Scalability Over Simplicity**
+* **Security by Default**
+* **Non-CRUD System Thinking**
 
-Schema-Driven Validation
+---
 
-Scalability Over Simplicity
+# 🧪 Ideal Use Cases
 
-Security by Default
+* Bank statement reconciliation
+* Payment gateway settlements
+* Ledger vs ERP comparisons
+* Internal financial audits
+* Compliance & regulatory systems
+* High-volume batch financial processing
 
-Non-CRUD System Thinking
+---
 
-🧪 Ideal Use Cases
+# 📌 Future Enhancements
 
-Bank statement reconciliation
+* ⏳ Background processing with BullMQ workers
+* 📊 Admin dashboard (React)
+* 🧠 Advanced reconciliation rule engine
+* 📑 File validation & schema enforcement
+* 📈 Reporting & analytics layer
+* 🐳 Docker containerization
+* ☁️ Cloud deployment configuration
 
-Payment gateway settlements
+---
 
-Ledger vs ERP comparisons
+# 👨‍💻 Author
 
-Internal financial audits
-
-Compliance & regulatory systems
-
-High-volume batch financial processing
-
-📌 Future Enhancements
-
-⏳ Background processing with BullMQ workers
-
-📊 Admin dashboard (React)
-
-🧠 Advanced reconciliation rule engine
-
-📑 File validation & schema enforcement
-
-📈 Reporting & analytics layer
-
-🐳 Docker containerization
-
-☁️ Cloud deployment configuration
-
-👨‍💻 Author
-
-Madhav Kishor
+**Madhav Kishor**
 Backend Developer | MERN Stack
 Focused on scalable systems, financial architectures & clean backend design.
 
-⭐ Why This Project Stands Out
+---
 
-This system is built with real-world enterprise considerations and is ideal for:
+# ⭐ Why This Project Stands Out
 
-Backend developer interviews
+This system is built with **real-world enterprise considerations** and is ideal for:
 
-System design discussions
-
-Architecture portfolio projects
-
-Production-grade financial platforms
+* Backend developer interviews
+* System design discussions
+* Architecture portfolio projects
+* Production-grade financial platforms
