@@ -1,4 +1,4 @@
-*🧾 Smart Reconciliation & Audit System*
+**🧾 Smart Reconciliation & Audit System**
 
 A scalable, enterprise-grade MERN-based backend system built for high-volume financial data reconciliation with:
 
