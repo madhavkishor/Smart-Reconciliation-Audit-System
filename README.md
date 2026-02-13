@@ -259,8 +259,8 @@ npm run dev
 # 👨‍💻 Author
 
 **Madhav Kishor**
-FullStack Developer | MERN Stack
-Focused on scalable systems, financial architectures & clean backend design.
+Full Stack Developer | MERN Stack
+Focused on scalable systems, financial architectures & clean FullStack design.
 
 ---
 
