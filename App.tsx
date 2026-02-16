@@ -20,7 +20,7 @@ const App: React.FC = () => {
   const [uploadedRecords, setUploadedRecords] = useState<TransactionRecord[]>([]);
   const [auditLogs, setAuditLogs] = useState<AuditLog[]>([]);
 
-  // Initialize mock system data
+  // Initialize mock system datas
   useEffect(() => {
     setSystemRecords(generateSystemRecords(100));
   }, []);
